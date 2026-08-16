@@ -1,0 +1,82 @@
+[gd_scene format=4 uid="uid://bir174ubojtgb"]
+
+[ext_resource type="Texture2D" uid="uid://20x4i4hbbikn" path="res://assets/Platformer/Abstract Platformer/PNG/Backgrounds/set3_background.png" id="1_mtuav"]
+[ext_resource type="Texture2D" uid="uid://c0ma605f06wqt" path="res://assets/Platformer/Abstract Platformer/PNG/Backgrounds/set3_hills.png" id="2_3vde5"]
+[ext_resource type="Texture2D" uid="uid://cphc2trv7ppnt" path="res://assets/Platformer/Abstract Platformer/PNG/Backgrounds/set3_tiles.png" id="2_hpxl2"]
+[ext_resource type="PackedScene" uid="uid://b74gssbkumrnu" path="res://scenes/player.tscn" id="3_hpxl2"]
+[ext_resource type="TileSet" uid="uid://dwji4bkykpqwl" path="res://scenes/green_gorund_tiles_set.tres" id="4_hpxl2"]
+[ext_resource type="PackedScene" uid="uid://bmxp7uwb6xy0e" path="res://scenes/enemy_walking.tscn" id="5_fem2g"]
+[ext_resource type="PackedScene" uid="uid://bohiqxqj2u8y6" path="res://scenes/static_platform_a.tscn" id="7_31kg2"]
+[ext_resource type="PackedScene" uid="uid://bvi51roak4duf" path="res://scenes/moving_platform_a.tscn" id="8_6s1ea"]
+
+[node name="tutorial_level" type="Node2D" unique_id=1528272827]
+
+[node name="background" type="ParallaxBackground" parent="." unique_id=1095741792]
+
+[node name="layer_1" type="ParallaxLayer" parent="background" unique_id=525800177]
+motion_scale = Vector2(0, 0)
+
+[node name="backgorund_color" type="Sprite2D" parent="background/layer_1" unique_id=974989227]
+z_index = -1
+scale = Vector2(1.1810192, 1.1625)
+texture = ExtResource("1_mtuav")
+centered = false
+
+[node name="layer_2" type="ParallaxLayer" parent="background" unique_id=757291491]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="backgourn_object_1" type="Sprite2D" parent="background/layer_2" unique_id=575690900]
+position = Vector2(572, 410)
+texture = ExtResource("2_hpxl2")
+
+[node name="backgourn_object_2" type="Sprite2D" parent="background/layer_2" unique_id=733116455]
+position = Vector2(1708, 410)
+texture = ExtResource("2_hpxl2")
+
+[node name="backgourn_object_3" type="Sprite2D" parent="background/layer_2" unique_id=212718045]
+position = Vector2(2844, 410)
+texture = ExtResource("2_hpxl2")
+
+[node name="layer_3" type="ParallaxLayer" parent="background" unique_id=1486674027]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="background_object_2" type="Sprite2D" parent="background/layer_3" unique_id=439198562]
+position = Vector2(584, 432)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_3vde5")
+
+[node name="background_object_2_1" type="Sprite2D" parent="background/layer_3" unique_id=960218227]
+position = Vector2(1802.0001, 432)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_3vde5")
+
+[node name="ground" type="TileMapLayer" parent="." unique_id=1389597796]
+tile_map_data = PackedByteArray("AAABAAkADgAAAAAAAAACAAkABQAAAAAAAAADAAkABQAAAAAAAAABAAoAAwAAAAAAAAABAAsAAwAAAAAAAAACAAoAAwAAAAAAAAACAAsAAwAAAAAAAAADAAoAAwAAAAAAAAADAAsAAwAAAAAAAAAEAAoAAwAAAAAAAAAEAAsAAwAAAAAAAAAFAAoAAwAAAAAAAAAFAAsAAwAAAAAAAAAGAAoAAwAAAAAAAAAGAAsAAwAAAAAAAAAHAAoAAwAAAAAAAAAHAAsAAwAAAAAAAAAIAAoAAwAAAAAAAAAIAAsAAwAAAAAAAAAJAAoAAwAAAAAAAAAJAAsAAwAAAAAAAAAEAAkABQAAAAAAAAAFAAkABQAAAAAAAAAGAAkABQAAAAAAAAAHAAkABQAAAAAAAAAIAAkABQAAAAAAAAAJAAkABgAAAAAAAAAAAAkAAwAAAAAAAAAAAAoAAwAAAAAAAAAAAAsAAwAAAAAAAAABAAgAAwAAAAAAAAAAAAYAAwAAAAAAAAAAAAcAAwAAAAAAAAAAAAgAAwAAAAAAAAABAAYAAwAAAAAAAAABAAcAAwAAAAAAAAABAAUABgAAAAAAAAAAAAUABQAAAAAAAAD//wEAAwAAAAAAAAD//wIAAwAAAAAAAAD//wAAAwAAAAAAAAD//wMAAwAAAAAAAAD//wQAAwAAAAAAAAANAAkABgAAAAAAAAANAAoAAwAAAAAAAAANAAsAAwAAAAAAAAAMAAkABAAAAAAAAAAMAAoAAwAAAAAAAAAMAAsAAwAAAAAAAAAQAAkABAAAAAAAAAAQAAoAAwAAAAAAAAAQAAsAAwAAAAAAAAARAAkABgAAAAAAAAARAAoAAwAAAAAAAAARAAsAAwAAAAAAAAAUAAkABAAAAAAAAAAVAAkABQAAAAAAAAAWAAkABQAAAAAAAAAYAAgABAAAAAAAAAAZAAgABQAAAAAAAAAXAAkABQAAAAAAAAAaAAgABQAAAAAAAAAcAAkABQAAAAAAAAAdAAkABQAAAAAAAAAeAAkABQAAAAAAAAAfAAkABgAAAAAAAAAbAAgABgAAAAAAAAAUAAoAAwAAAAAAAAAVAAoAAwAAAAAAAAAWAAoAAwAAAAAAAAAXAAoAAwAAAAAAAAAYAAoAAwAAAAAAAAAZAAoAAwAAAAAAAAAaAAoAAwAAAAAAAAAbAAoAAwAAAAAAAAAcAAoAAwAAAAAAAAAdAAoAAwAAAAAAAAAeAAoAAwAAAAAAAAAfAAoAAwAAAAAAAAAUAAsAAwAAAAAAAAAVAAsAAwAAAAAAAAAWAAsAAwAAAAAAAAAXAAsAAwAAAAAAAAAYAAsAAwAAAAAAAAAZAAsAAwAAAAAAAAAaAAsAAwAAAAAAAAAbAAsAAwAAAAAAAAAcAAsAAwAAAAAAAAAdAAsAAwAAAAAAAAAeAAsAAwAAAAAAAAAfAAsAAwAAAAAAAAAYAAkADQAAAAAAAAAZAAkAAwAAAAAAAAAaAAkAAwAAAAAAAAAbAAkADgAAAAAAAAAiAAoAAwAAAAAAAAAiAAsAAwAAAAAAAAAjAAoAAwAAAAAAAAAjAAsAAwAAAAAAAAAkAAoAAwAAAAAAAAAkAAsAAwAAAAAAAAAlAAoAAwAAAAAAAAAlAAsAAwAAAAAAAAAwAAoAAwAAAAAAAAAwAAsAAwAAAAAAAAAxAAoAAwAAAAAAAAAxAAsAAwAAAAAAAAAyAAoAAwAAAAAAAAAyAAsAAwAAAAAAAAAzAAoAAwAAAAAAAAAzAAsAAwAAAAAAAAA0AAoAAwAAAAAAAAA0AAsAAwAAAAAAAABJAAoAAwAAAAAAAABJAAsAAwAAAAAAAABKAAoAAwAAAAAAAABKAAsAAwAAAAAAAABLAAoAAwAAAAAAAABLAAsAAwAAAAAAAABMAAoAAwAAAAAAAABMAAsAAwAAAAAAAAAiAAkABAAAAAAAAAAjAAkABQAAAAAAAAAkAAkABQAAAAAAAAAxAAkABQAAAAAAAAAyAAkABQAAAAAAAAAzAAkABQAAAAAAAABKAAkABQAAAAAAAABLAAkABQAAAAAAAABMAAkABgAAAAAAAAA0AAkABgAAAAAAAAAlAAkABgAAAAAAAAAwAAkABAAAAAAAAABJAAkABAAAAAAAAAA=")
+tile_set = ExtResource("4_hpxl2")
+
+[node name="platforms" type="Node2D" parent="." unique_id=335435876]
+
+[node name="moving_platform_A" parent="platforms" unique_id=711947590 instance=ExtResource("8_6s1ea")]
+position = Vector2(2608, 624)
+
+[node name="moving_platform_A2" parent="platforms" unique_id=31652094 instance=ExtResource("8_6s1ea")]
+position = Vector2(3608, 632)
+
+[node name="moving_platform_A3" parent="platforms" unique_id=1930146800 instance=ExtResource("8_6s1ea")]
+position = Vector2(4320, 624)
+move_to = Vector2(-200, 0)
+
+[node name="static_platform_A" parent="platforms" unique_id=1351465451 instance=ExtResource("7_31kg2")]
+position = Vector2(960, 560)
+
+[node name="enemies" type="Node2D" parent="." unique_id=84003338]
+
+[node name="enemy_walking" parent="enemies" unique_id=698598125 instance=ExtResource("5_fem2g")]
+position = Vector2(1316, 555)
+
+[node name="enemy_walking2" parent="enemies" unique_id=1642253744 instance=ExtResource("5_fem2g")]
+position = Vector2(2024, 555)
+direction = -1
+
+[node name="player" parent="." unique_id=1840166850 instance=ExtResource("3_hpxl2")]
+position = Vector2(3280, 536)

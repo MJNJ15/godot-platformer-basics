@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bmxp7uwb6xy0e"]
+
+[ext_resource type="Script" uid="uid://dvojwpxnitwnp" path="res://scripts/enemy_walking.gd" id="1_5ffrw"]
+[ext_resource type="Texture2D" uid="uid://62sh3mk3jt4b" path="res://assets/Platformer/Abstract Platformer/PNG/Enemies/enemyWalking_1.png" id="1_ejytf"]
+[ext_resource type="Texture2D" uid="uid://bhemgxpcgu6vi" path="res://assets/Platformer/Abstract Platformer/PNG/Enemies/enemyWalking_2.png" id="2_dq62l"]
+[ext_resource type="Texture2D" uid="uid://u16hp1ke7304" path="res://assets/Platformer/Abstract Platformer/PNG/Enemies/enemyWalking_3.png" id="3_d3026"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t3jqa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ejytf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dq62l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d3026")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5tro"]
+size = Vector2(20, 32)
+
+[node name="enemy_walking" type="Area2D" unique_id=698598125]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_5ffrw")
+
+[node name="enemy_walking_sprite" type="AnimatedSprite2D" parent="." unique_id=947748440]
+sprite_frames = SubResource("SpriteFrames_t3jqa")
+animation = &"walk"
+frame_progress = 0.17887263
+
+[node name="enemy_walking_collison" type="CollisionShape2D" parent="." unique_id=1733136660]
+shape = SubResource("RectangleShape2D_h5tro")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
