@@ -1,74 +1,53 @@
 [gd_scene format=4 uid="uid://dnem4vli5j2cg"]
 
+[ext_resource type="Script" uid="uid://bvi1psev7rxk0" path="res://scripts/level_manager.gd" id="1_24k53"]
 [ext_resource type="TileSet" uid="uid://dwji4bkykpqwl" path="res://scenes/green_gorund_tiles_set.tres" id="1_nbq8v"]
 [ext_resource type="PackedScene" uid="uid://b74gssbkumrnu" path="res://scenes/player.tscn" id="1_pgmb1"]
-[ext_resource type="PackedScene" uid="uid://cbakxomxm7xjp" path="res://scenes/platform.tscn" id="5_g8hky"]
-[ext_resource type="Texture2D" uid="uid://dlxx42i3w67of" path="res://assets/Platformer/Abstract Platformer/PNG/Tiles/Green tiles/tileGreen_15.png" id="5_mk7b3"]
-[ext_resource type="Texture2D" uid="uid://6nohr5f2qlej" path="res://assets/Platformer/Abstract Platformer/PNG/Tiles/Green tiles/tileGreen_16.png" id="6_4o3qb"]
+[ext_resource type="PackedScene" uid="uid://bvi51roak4duf" path="res://scenes/moving_platform_a.tscn" id="3_0cpfe"]
+[ext_resource type="PackedScene" uid="uid://c5se1bhy13efi" path="res://scenes/static_platform_b.tscn" id="3_g8hky"]
+[ext_resource type="PackedScene" uid="uid://cww8t82m1t2sc" path="res://scenes/static_platform_c.tscn" id="4_0j4l2"]
+[ext_resource type="PackedScene" uid="uid://bohiqxqj2u8y6" path="res://scenes/static_platform_a.tscn" id="5_qf8as"]
+[ext_resource type="PackedScene" uid="uid://356sotqjn2cj" path="res://scenes/killzone.tscn" id="6_0j4l2"]
+[ext_resource type="PackedScene" uid="uid://dt20u1n0oc5po" path="res://scenes/walking_enemy.tscn" id="8_mk7b3"]
+[ext_resource type="PackedScene" uid="uid://chpj7d1kecpv1" path="res://scenes/flaying_enemy.tscn" id="9_4o3qb"]
+[ext_resource type="PackedScene" uid="uid://xrvybbl4d62e" path="res://scenes/popup.tscn" id="10_8trvs"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vgpne"]
-texture = ExtResource("5_mk7b3")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8hky"]
-texture = ExtResource("6_4o3qb")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_o4r5p"]
-sources/0 = SubResource("TileSetAtlasSource_vgpne")
-sources/1 = SubResource("TileSetAtlasSource_g8hky")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4tw0"]
-size = Vector2(229, 29)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t3jqa"]
+distance = -1.0
 
 [node name="testing_level" type="Node2D" unique_id=297703790]
+script = ExtResource("1_24k53")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=797883163]
-tile_map_data = PackedByteArray("AAABAAoABAAAAAAAAAACAAoABQAAAAAAAAADAAoABQAAAAAAAAAEAAoABQAAAAAAAAAFAAoABQAAAAAAAAAGAAoABQAAAAAAAAAHAAoABQAAAAAAAAAIAAoABQAAAAAAAAAJAAoABQAAAAAAAAAKAAoABQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAABAAoABAAAAAAAAAACAAoABQAAAAAAAAADAAoABQAAAAAAAAAEAAoABQAAAAAAAAAFAAoABQAAAAAAAAAGAAoABQAAAAAAAAAHAAoABQAAAAAAAAAIAAoABQAAAAAAAAAJAAoABQAAAAAAAAAKAAoABQAAAAAAAAALAAoABQAAAAAAAAAMAAoABQAAAAAAAAANAAoABQAAAAAAAAAOAAoADgAAAAAAAAAQAAoADQAAAAAAAAAOAAkABgAAAAAAAAAPAAoABQAAAAAAAAAQAAkABAAAAAAAAAA=")
 tile_set = ExtResource("1_nbq8v")
 
+[node name="static_platform_b" parent="." unique_id=86740250 instance=ExtResource("3_g8hky")]
+position = Vector2(516, 593)
+
+[node name="static_platform_c" parent="." unique_id=634719065 instance=ExtResource("4_0j4l2")]
+position = Vector2(274, 593)
+
+[node name="static_platform_A" parent="." unique_id=1351465451 instance=ExtResource("5_qf8as")]
+position = Vector2(669, 589)
+
+[node name="killzone" parent="." unique_id=770354611 instance=ExtResource("6_0j4l2")]
+position = Vector2(-4, 733)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1635141988]
+position = Vector2(3, 0)
+shape = SubResource("WorldBoundaryShape2D_t3jqa")
+
+[node name="moving_platform_A" parent="." unique_id=711947590 instance=ExtResource("3_0cpfe")]
+position = Vector2(390, 473)
+
 [node name="player" parent="." unique_id=1840166850 instance=ExtResource("1_pgmb1")]
-position = Vector2(101, 606)
+position = Vector2(336, 542)
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=419211554]
+[node name="walking_enemy" parent="." unique_id=1278046215 instance=ExtResource("8_mk7b3")]
+position = Vector2(131, 619)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="AnimatableBody2D" unique_id=1919855025]
-tile_set = SubResource("TileSet_o4r5p")
+[node name="flaying_enemy" parent="." unique_id=2075874586 instance=ExtResource("9_4o3qb")]
+position = Vector2(526, 316)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=834512044]
-position = Vector2(478.5, 581.5)
-shape = SubResource("RectangleShape2D_d4tw0")
-one_way_collision = true
-
-[node name="platform" parent="." unique_id=426440875 instance=ExtResource("5_g8hky")]
-position = Vector2(211, 549)
+[node name="popup" parent="." unique_id=104213649 instance=ExtResource("10_8trvs")]

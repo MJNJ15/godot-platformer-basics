@@ -3,6 +3,8 @@ extends AnimatableBody2D
 @export var move_to := Vector2(200, 0)
 @export var duration := 2.0
 @export var wait_time := 0.5
+@export var transition := Tween.TRANS_SINE
+@export var easing := Tween.EASE_IN_OUT
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,13 +17,8 @@ func _ready() -> void:
 
 	tween.tween_interval(wait_time)
 	tween.tween_property(self, "position", end, duration) \
-		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+		.set_trans(transition).set_ease(easing)
 
 	tween.tween_interval(wait_time)
 	tween.tween_property(self, "position", start, duration) \
-		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
-	pass
+		.set_trans(transition).set_ease(easing)

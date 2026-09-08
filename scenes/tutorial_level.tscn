@@ -1,15 +1,22 @@
 [gd_scene format=4 uid="uid://bir174ubojtgb"]
 
+[ext_resource type="Script" uid="uid://bvi1psev7rxk0" path="res://scripts/level_manager.gd" id="1_jjf0l"]
 [ext_resource type="Texture2D" uid="uid://20x4i4hbbikn" path="res://assets/Platformer/Abstract Platformer/PNG/Backgrounds/set3_background.png" id="1_mtuav"]
 [ext_resource type="Texture2D" uid="uid://c0ma605f06wqt" path="res://assets/Platformer/Abstract Platformer/PNG/Backgrounds/set3_hills.png" id="2_3vde5"]
 [ext_resource type="Texture2D" uid="uid://cphc2trv7ppnt" path="res://assets/Platformer/Abstract Platformer/PNG/Backgrounds/set3_tiles.png" id="2_hpxl2"]
 [ext_resource type="PackedScene" uid="uid://b74gssbkumrnu" path="res://scenes/player.tscn" id="3_hpxl2"]
 [ext_resource type="TileSet" uid="uid://dwji4bkykpqwl" path="res://scenes/green_gorund_tiles_set.tres" id="4_hpxl2"]
-[ext_resource type="PackedScene" uid="uid://bmxp7uwb6xy0e" path="res://scenes/enemy_walking.tscn" id="5_fem2g"]
-[ext_resource type="PackedScene" uid="uid://bohiqxqj2u8y6" path="res://scenes/static_platform_a.tscn" id="7_31kg2"]
+[ext_resource type="Script" uid="uid://dwt5svvsx7pni" path="res://scripts/hud.gd" id="7_vj1s7"]
+[ext_resource type="PackedScene" uid="uid://chpj7d1kecpv1" path="res://scenes/flaying_enemy.tscn" id="7_w40hx"]
 [ext_resource type="PackedScene" uid="uid://bvi51roak4duf" path="res://scenes/moving_platform_a.tscn" id="8_6s1ea"]
+[ext_resource type="PackedScene" uid="uid://dt20u1n0oc5po" path="res://scenes/walking_enemy.tscn" id="8_vlwwk"]
+[ext_resource type="PackedScene" uid="uid://356sotqjn2cj" path="res://scenes/killzone.tscn" id="8_w40hx"]
+[ext_resource type="PackedScene" uid="uid://xrvybbl4d62e" path="res://scenes/popup.tscn" id="12_vj1s7"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t3jqa"]
 
 [node name="tutorial_level" type="Node2D" unique_id=1528272827]
+script = ExtResource("1_jjf0l")
 
 [node name="background" type="ParallaxBackground" parent="." unique_id=1095741792]
 
@@ -50,6 +57,11 @@ position = Vector2(1802.0001, 432)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_3vde5")
 
+[node name="background_object_2_2" type="Sprite2D" parent="background/layer_3" unique_id=1538094981]
+position = Vector2(3024, 432)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_3vde5")
+
 [node name="ground" type="TileMapLayer" parent="." unique_id=1389597796]
 tile_map_data = PackedByteArray("AAABAAkADgAAAAAAAAACAAkABQAAAAAAAAADAAkABQAAAAAAAAABAAoAAwAAAAAAAAABAAsAAwAAAAAAAAACAAoAAwAAAAAAAAACAAsAAwAAAAAAAAADAAoAAwAAAAAAAAADAAsAAwAAAAAAAAAEAAoAAwAAAAAAAAAEAAsAAwAAAAAAAAAFAAoAAwAAAAAAAAAFAAsAAwAAAAAAAAAGAAoAAwAAAAAAAAAGAAsAAwAAAAAAAAAHAAoAAwAAAAAAAAAHAAsAAwAAAAAAAAAIAAoAAwAAAAAAAAAIAAsAAwAAAAAAAAAJAAoAAwAAAAAAAAAJAAsAAwAAAAAAAAAEAAkABQAAAAAAAAAFAAkABQAAAAAAAAAGAAkABQAAAAAAAAAHAAkABQAAAAAAAAAIAAkABQAAAAAAAAAJAAkABgAAAAAAAAAAAAkAAwAAAAAAAAAAAAoAAwAAAAAAAAAAAAsAAwAAAAAAAAABAAgAAwAAAAAAAAAAAAYAAwAAAAAAAAAAAAcAAwAAAAAAAAAAAAgAAwAAAAAAAAABAAYAAwAAAAAAAAABAAcAAwAAAAAAAAABAAUABgAAAAAAAAAAAAUABQAAAAAAAAD//wEAAwAAAAAAAAD//wIAAwAAAAAAAAD//wAAAwAAAAAAAAD//wMAAwAAAAAAAAD//wQAAwAAAAAAAAANAAkABgAAAAAAAAANAAoAAwAAAAAAAAANAAsAAwAAAAAAAAAMAAkABAAAAAAAAAAMAAoAAwAAAAAAAAAMAAsAAwAAAAAAAAAQAAkABAAAAAAAAAAQAAoAAwAAAAAAAAAQAAsAAwAAAAAAAAARAAkABgAAAAAAAAARAAoAAwAAAAAAAAARAAsAAwAAAAAAAAAUAAkABAAAAAAAAAAVAAkABQAAAAAAAAAWAAkABQAAAAAAAAAYAAgABAAAAAAAAAAZAAgABQAAAAAAAAAXAAkABQAAAAAAAAAaAAgABQAAAAAAAAAcAAkABQAAAAAAAAAdAAkABQAAAAAAAAAeAAkABQAAAAAAAAAfAAkABgAAAAAAAAAbAAgABgAAAAAAAAAUAAoAAwAAAAAAAAAVAAoAAwAAAAAAAAAWAAoAAwAAAAAAAAAXAAoAAwAAAAAAAAAYAAoAAwAAAAAAAAAZAAoAAwAAAAAAAAAaAAoAAwAAAAAAAAAbAAoAAwAAAAAAAAAcAAoAAwAAAAAAAAAdAAoAAwAAAAAAAAAeAAoAAwAAAAAAAAAfAAoAAwAAAAAAAAAUAAsAAwAAAAAAAAAVAAsAAwAAAAAAAAAWAAsAAwAAAAAAAAAXAAsAAwAAAAAAAAAYAAsAAwAAAAAAAAAZAAsAAwAAAAAAAAAaAAsAAwAAAAAAAAAbAAsAAwAAAAAAAAAcAAsAAwAAAAAAAAAdAAsAAwAAAAAAAAAeAAsAAwAAAAAAAAAfAAsAAwAAAAAAAAAYAAkADQAAAAAAAAAZAAkAAwAAAAAAAAAaAAkAAwAAAAAAAAAbAAkADgAAAAAAAAAiAAoAAwAAAAAAAAAiAAsAAwAAAAAAAAAjAAoAAwAAAAAAAAAjAAsAAwAAAAAAAAAkAAoAAwAAAAAAAAAkAAsAAwAAAAAAAAAlAAoAAwAAAAAAAAAlAAsAAwAAAAAAAAAwAAoAAwAAAAAAAAAwAAsAAwAAAAAAAAAxAAoAAwAAAAAAAAAxAAsAAwAAAAAAAAAyAAoAAwAAAAAAAAAyAAsAAwAAAAAAAAAzAAoAAwAAAAAAAAAzAAsAAwAAAAAAAAA0AAoAAwAAAAAAAAA0AAsAAwAAAAAAAABJAAoAAwAAAAAAAABJAAsAAwAAAAAAAABKAAoAAwAAAAAAAABKAAsAAwAAAAAAAABLAAoAAwAAAAAAAABLAAsAAwAAAAAAAABMAAoAAwAAAAAAAABMAAsAAwAAAAAAAAAiAAkABAAAAAAAAAAjAAkABQAAAAAAAAAkAAkABQAAAAAAAAAxAAkABQAAAAAAAAAyAAkABQAAAAAAAAAzAAkABQAAAAAAAABKAAkABQAAAAAAAABLAAkABQAAAAAAAABMAAkABgAAAAAAAAA0AAkABgAAAAAAAAAlAAkABgAAAAAAAAAwAAkABAAAAAAAAABJAAkABAAAAAAAAAA=")
 tile_set = ExtResource("4_hpxl2")
@@ -60,23 +72,31 @@ tile_set = ExtResource("4_hpxl2")
 position = Vector2(2608, 624)
 
 [node name="moving_platform_A2" parent="platforms" unique_id=31652094 instance=ExtResource("8_6s1ea")]
-position = Vector2(3608, 632)
+position = Vector2(3576, 624)
 
 [node name="moving_platform_A3" parent="platforms" unique_id=1930146800 instance=ExtResource("8_6s1ea")]
 position = Vector2(4320, 624)
 move_to = Vector2(-200, 0)
 
-[node name="static_platform_A" parent="platforms" unique_id=1351465451 instance=ExtResource("7_31kg2")]
-position = Vector2(960, 560)
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1909829372]
+script = ExtResource("7_vj1s7")
 
 [node name="enemies" type="Node2D" parent="." unique_id=84003338]
 
-[node name="enemy_walking" parent="enemies" unique_id=698598125 instance=ExtResource("5_fem2g")]
-position = Vector2(1316, 555)
+[node name="flaying_enemy" parent="enemies" unique_id=2075874586 instance=ExtResource("7_w40hx")]
+position = Vector2(1616, 296)
 
-[node name="enemy_walking2" parent="enemies" unique_id=1642253744 instance=ExtResource("5_fem2g")]
-position = Vector2(2024, 555)
-direction = -1
+[node name="walking_enemy" parent="enemies" unique_id=1278046215 instance=ExtResource("8_vlwwk")]
+position = Vector2(160, 552)
+
+[node name="killzone" parent="." unique_id=770354611 instance=ExtResource("8_w40hx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=203224400]
+position = Vector2(-16, 824)
+shape = SubResource("WorldBoundaryShape2D_t3jqa")
 
 [node name="player" parent="." unique_id=1840166850 instance=ExtResource("3_hpxl2")]
-position = Vector2(3280, 536)
+position = Vector2(80, 296)
+
+[node name="popup" parent="." unique_id=104213649 instance=ExtResource("12_vj1s7")]
+visible = false

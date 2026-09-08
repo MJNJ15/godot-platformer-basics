@@ -59,7 +59,7 @@ height = 44.0
 
 [node name="player" type="CharacterBody2D" unique_id=1840166850]
 collision_layer = 2
-collision_mask = 7
+collision_mask = 3
 script = ExtResource("1_smehm")
 
 [node name="player_sprite" type="AnimatedSprite2D" parent="." unique_id=964352107]

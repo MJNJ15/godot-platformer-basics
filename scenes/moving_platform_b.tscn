@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cgtb8yo715eg0"]
+
+[ext_resource type="Script" uid="uid://fjklmo14mbjo" path="res://scripts/moving_platform_b.gd" id="1_linnj"]
+[ext_resource type="Texture2D" uid="uid://dlxx42i3w67of" path="res://assets/Platformer/Abstract Platformer/PNG/Tiles/Green tiles/tileGreen_15.png" id="2_01rcf"]
+[ext_resource type="Texture2D" uid="uid://6nohr5f2qlej" path="res://assets/Platformer/Abstract Platformer/PNG/Tiles/Green tiles/tileGreen_16.png" id="3_xllf4"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=547215210]
+script = ExtResource("1_linnj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1834083753]
+texture = ExtResource("2_01rcf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1210324431]
+position = Vector2(64, 0)
+texture = ExtResource("3_xllf4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1981976993]
+polygon = PackedVector2Array(-24, -32, 88, -32, 96, -24, 96, -8, -32, -8, -32, -24)
+one_way_collision = true

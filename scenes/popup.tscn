@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://xrvybbl4d62e"]
+
+[ext_resource type="Script" uid="uid://bhxvcc0os4fmg" path="res://scripts/popup.gd" id="1_yopya"]
+[ext_resource type="Texture2D" uid="uid://m1p8xqjiqm4l" path="res://assets/Platformer/GUI/Window.png" id="1_yxq51"]
+[ext_resource type="Texture2D" uid="uid://cnvp7w0gca6cc" path="res://assets/Platformer/GUI/gui/button/Button_09.png" id="2_lq0bj"]
+[ext_resource type="Texture2D" uid="uid://bl0xx0d2no4i1" path="res://assets/Platformer/GUI/gui/button/Button_11.png" id="3_few6n"]
+[ext_resource type="Texture2D" uid="uid://c0l4lojcufrh4" path="res://assets/Platformer/GUI/gui/button/Button_10.png" id="4_pjjgq"]
+[ext_resource type="Texture2D" uid="uid://b301srrsujsyl" path="res://assets/Platformer/GUI/gui/button/Button_12.png" id="5_4grfj"]
+[ext_resource type="Texture2D" uid="uid://crkskiljuuj6i" path="res://assets/Platformer/GUI/gui/button/Button_51.png" id="5_xpi1p"]
+[ext_resource type="Texture2D" uid="uid://dav8t2tmwa3u3" path="res://assets/Platformer/GUI/gui/button/Button_50.png" id="6_j1gf8"]
+[ext_resource type="Texture2D" uid="uid://816h8lgmh23h" path="res://assets/Platformer/GUI/gui/button/Button_53.png" id="6_yeaff"]
+[ext_resource type="Texture2D" uid="uid://dptqxdsm4wvtn" path="res://assets/Platformer/GUI/gui/button/Button_52.png" id="7_orse4"]
+[ext_resource type="Texture2D" uid="uid://cpiy112wffqfv" path="res://assets/Platformer/GUI/gui/button/Button_21.png" id="10_xpi1p"]
+[ext_resource type="Texture2D" uid="uid://d24fdxrk34wpm" path="res://assets/Platformer/GUI/gui/button/Button_23.png" id="11_yeaff"]
+[ext_resource type="Texture2D" uid="uid://b4l4h852kskvk" path="res://assets/Platformer/GUI/gui/button/Button_22.png" id="12_sopc1"]
+[ext_resource type="Texture2D" uid="uid://c81pat1cm780p" path="res://assets/Platformer/GUI/gui/button/Button_24.png" id="13_05g8i"]
+[ext_resource type="Texture2D" uid="uid://u2wrbhs38gh7" path="res://assets/Platformer/GUI/gui/button/Button_46.png" id="15_n0ljh"]
+[ext_resource type="Texture2D" uid="uid://brp8cdc1g8adg" path="res://assets/Platformer/GUI/gui/button/Button_48.png" id="16_dv6j6"]
+[ext_resource type="Texture2D" uid="uid://bah8s3vfue4mk" path="res://assets/Platformer/GUI/gui/button/Button_47.png" id="17_mw30d"]
+[ext_resource type="Texture2D" uid="uid://dhe6qcew5j5od" path="res://assets/Platformer/GUI/gui/button/Button_49.png" id="18_nyq1c"]
+[ext_resource type="Texture2D" uid="uid://buxryjmjqy7yu" path="res://assets/Platformer/GUI/gameover.png" id="19_4a1el"]
+[ext_resource type="Texture2D" uid="uid://c6cvxfrxnyaw0" path="res://assets/Platformer/GUI/complete.png" id="20_c3rad"]
+[ext_resource type="Texture2D" uid="uid://tme52kuuh747" path="res://assets/Platformer/GUI/gui/widow/Window - Copy_04.png" id="21_mw30d"]
+[ext_resource type="Texture2D" uid="uid://bnxocxesn3s58" path="res://assets/Platformer/GUI/gui/widow/Window - Copy_08.png" id="22_nyq1c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o4r5p"]
+texture = ExtResource("1_yxq51")
+texture_margin_left = 301.0
+texture_margin_top = 213.0
+texture_margin_right = 301.0
+texture_margin_bottom = 214.0
+
+[node name="popup" type="CanvasLayer" unique_id=104213649]
+process_mode = 3
+script = ExtResource("1_yopya")
+
+[node name="overlay" type="ColorRect" parent="." unique_id=1897522619]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.49803922)
+
+[node name="Control" type="Control" parent="." unique_id=9133213]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="window" type="PanelContainer" parent="Control" unique_id=1005281375]
+custom_minimum_size = Vector2(603, 427)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.5
+offset_top = -213.5
+offset_right = 301.5
+offset_bottom = 213.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_o4r5p")
+
+[node name="home_button" type="TextureButton" parent="Control" unique_id=631181633]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 368.0
+offset_right = 557.0
+offset_bottom = 464.0
+texture_normal = ExtResource("6_j1gf8")
+texture_pressed = ExtResource("7_orse4")
+texture_hover = ExtResource("5_xpi1p")
+texture_disabled = ExtResource("6_yeaff")
+
+[node name="resrtart_button" type="TextureButton" parent="Control" unique_id=634550613]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 368.0
+offset_right = 685.0
+offset_bottom = 464.0
+texture_normal = ExtResource("2_lq0bj")
+texture_pressed = ExtResource("3_few6n")
+texture_hover = ExtResource("4_pjjgq")
+texture_disabled = ExtResource("5_4grfj")
+
+[node name="close_button" type="TextureButton" parent="Control" unique_id=945248051]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 128.0
+offset_right = 972.0
+offset_bottom = 224.0
+texture_normal = ExtResource("10_xpi1p")
+texture_pressed = ExtResource("11_yeaff")
+texture_hover = ExtResource("12_sopc1")
+texture_disabled = ExtResource("13_05g8i")
+
+[node name="TextureButton" type="TextureButton" parent="Control" unique_id=163780782]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 368.0
+offset_right = 812.0
+offset_bottom = 464.0
+texture_normal = ExtResource("15_n0ljh")
+texture_pressed = ExtResource("16_dv6j6")
+texture_hover = ExtResource("17_mw30d")
+texture_disabled = ExtResource("18_nyq1c")
+
+[node name="game_over" type="Sprite2D" parent="Control" unique_id=1461361179]
+visible = false
+position = Vector2(640, 152)
+texture = ExtResource("19_4a1el")
+
+[node name="victory" type="Sprite2D" parent="Control" unique_id=715309444]
+visible = false
+position = Vector2(640, 152)
+texture = ExtResource("20_c3rad")
+
+[node name="paused" type="Sprite2D" parent="Control" unique_id=390034506]
+visible = false
+position = Vector2(640.00006, 152)
+scale = Vector2(1.0030992, 1.0030992)
+texture = ExtResource("21_mw30d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control/paused" unique_id=473964095]
+position = Vector2(-6.1035156e-05, -23.925842)
+scale = Vector2(1.4953655, 1.4953655)
+texture = ExtResource("22_nyq1c")
+
+[connection signal="pressed" from="Control/home_button" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="Control/resrtart_button" to="." method="_on_resrtart_button_pressed"]
+[connection signal="pressed" from="Control/close_button" to="." method="_on_close_button_pressed"]

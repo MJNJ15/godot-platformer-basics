@@ -22,9 +22,6 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5tro"]
-size = Vector2(20, 32)
-
 [node name="enemy_walking" type="Area2D" unique_id=698598125]
 collision_layer = 4
 collision_mask = 7
@@ -35,7 +32,7 @@ sprite_frames = SubResource("SpriteFrames_t3jqa")
 animation = &"walk"
 frame_progress = 0.17887263
 
-[node name="enemy_walking_collison" type="CollisionShape2D" parent="." unique_id=1733136660]
-shape = SubResource("RectangleShape2D_h5tro")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2045111426]
+polygon = PackedVector2Array(-16, 8, -16, -8, -8, -16, 0, -16, 8, -16, 16, -8, 16, 0, 16, 8, 8, 8, 8, 16, -8, 16, -8, 8)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
