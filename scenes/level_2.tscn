@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dpvjnn68jl7ka" path="res://scenes/finish_popup.tscn" id="7_y0kc7"]
 [ext_resource type="FontFile" uid="uid://bh2sfa0ywbmwi" path="res://assets/fonts/PixelOperator8.ttf" id="8_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://b1on1walxi5y4" path="res://scenes/apple.tscn" id="9_6cvei"]
-[ext_resource type="Script" uid="uid://cilnatop118q8" path="res://scenes/apple_score.gd" id="9_que50"]
+[ext_resource type="Script" uid="uid://cilnatop118q8" path="res://scripts/apple_score.gd" id="9_que50"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_que50"]
 shader = ExtResource("1_b4j7a")

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b1on1walxi5y4" path="res://scenes/apple.tscn" id="6_5xqnf"]
 [ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://scenes/player.tscn" id="7_una4e"]
 [ext_resource type="FontFile" uid="uid://bh2sfa0ywbmwi" path="res://assets/fonts/PixelOperator8.ttf" id="8_ema3p"]
-[ext_resource type="Script" uid="uid://cilnatop118q8" path="res://scenes/apple_score.gd" id="9_8uepa"]
+[ext_resource type="Script" uid="uid://cilnatop118q8" path="res://scripts/apple_score.gd" id="9_8uepa"]
 [ext_resource type="PackedScene" uid="uid://dpvjnn68jl7ka" path="res://scenes/finish_popup.tscn" id="10_q7pjq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_que50"]

@@ -13,5 +13,11 @@ func _on_restart_button_pressed() -> void:
 
 func _on_next_button_pressed() -> void:
 	get_tree().paused = false
-	next_level.emit()
-	get_tree().change_scene_to_file("res://scenes/level_2.tscn")
+	
+	var next_level = LevelManager.get_next_level()
+	
+	if next_level != null:
+		get_tree().change_scene_to_packed(next_level)
+	else:
+		LevelManager.reset_game()
+		get_tree().change_scene_to_file("res://scenes/level_1.tscn")
